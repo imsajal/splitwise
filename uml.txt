@@ -1,0 +1,31 @@
+
+Use Cases --
+
+Maintain transaction history
+Metadata for expense
+Add User
+Balancesheet
+Add expense
+
+Objects --
+
+User - name, id, phone , email
+UserService - map of id by user
+
+ExpenseSplitStrategy interface class -- abstract methods like SplitExpense, validateExpense
+expenseType enum - equal, percentage, exact
+Group
+GroupService - getGroupByid,  add user to group
+ExpenseSplitStrategyFactory - to return expense service by expense type getExpenseSplitStrategy
+ExpenseDTO -  paidby, paidto list, expenseType , amount , splitValues addtional metadata , group id
+EqualSplitStrategy implements Expense -  impement methods
+percentageSplitStrategy implements Expense -  impement methods
+exactSplitStrategy imlements Expense -  impement methods
+
+balance sheet class - list of balances, show and showALl, updateBalance, maintain update groupBalanceSheet by groupid
+ExpenseService - list of expenses, balancesheet object, method like createExpense, processExpense -- getExpenseSplitStrategy
+                  call validate  Expense and split expense then update balance sheet by calling balance sheet service,
+
+Splitwise app - create users / start adding expense / use show and show user
+
+
